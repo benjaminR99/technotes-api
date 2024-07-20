@@ -2,7 +2,7 @@ require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORD || 3500 ;
+const PORT = process.env.PORT || 3500 ;
 const cookieParser = require('cookie-parser');
 const {logger,logEvents} = require('./middleware/logger');
 const handleError = require('./middleware/errorHandler')
@@ -43,8 +43,4 @@ mongoose.connection.once('open',()=>{
     })
 })
 
-mongoose.connection.on('error',(err)=>{
-    const msh = `${err.name} ${err.code} ${err.message} ${err.hostname}\n`
-    logEvents(msh,'mongoError.log');
-    console.log(err);
-})
+

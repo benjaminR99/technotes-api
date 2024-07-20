@@ -1,6 +1,6 @@
 
  
-const whitelist = ['https://technotes-9esz.onrender.com']
+const whitelist = ['https://technotes-9esz.onrender.com', 'http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
     if ((whitelist.indexOf(origin) !== -1) || !origin) {
